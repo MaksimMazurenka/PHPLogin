@@ -9,10 +9,10 @@ $password = $_POST['password'];
 
 $error_fields = [];
 
-$database = new CRUD();
+$Database = new CRUD();
 $password1 = md5($password . "соль");
-$us = new User($login,$password1);
-$check_user = $database->getUserByLogin($login);
+$User = new User($login,$password1);
+$check_user = $Database->getUserByLogin($login);
 
 if($login==""){
     $error_fields[] = 'login';
@@ -59,7 +59,7 @@ if(strlen($password)<6){
     die();
 }
 
-if ($database->checkPassword($us)==0 || $check_user == null) {
+if ($Database->checkPassword($User)==0 || $check_user == null) {
     $error_fields[] = 'login';
     $error_fields[] = 'password';
     $response = [

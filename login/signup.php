@@ -9,7 +9,7 @@ $login = $_POST['login'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $password_confirm = $_POST['password_confirm'];
-$crud = new CRUD();
+$Crud = new CRUD();
 
 $error_fields = [];
 
@@ -46,7 +46,7 @@ if(!preg_match("#^[a-zA-Z0-9]+$#", $login)){
     echo json_encode($response);
     die();
 }
-if ($crud->getUserByLogin($login) !=  null) {
+if ($Crud->getUserByLogin($login) !=  null) {
     $response = [
         "status" => false,
         "type" => 1,
@@ -123,7 +123,7 @@ if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
     echo json_encode($response);
     die();
 }
-if ($crud->getUserByEmail($email) !=  null) {
+if ($Crud->getUserByEmail($email) !=  null) {
     $response = [
         "status" => false,
         "type" => 3,
@@ -169,8 +169,8 @@ if(!preg_match("#^[a-zA-Z]+$#", $name)){
 
 if ($password === $password_confirm) {
     $password = md5($password . "соль");
-    $new_user = new User($login,$password,$email,$name);
-    $crud->setUser($new_user);
+    $New_User = new User($login,$password,$email,$name);
+    $Crud->setUser($New_User);
     $response = [
         "status" => true,
         "message" => "Success",
