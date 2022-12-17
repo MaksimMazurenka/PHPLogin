@@ -22,11 +22,13 @@ $('.login-btn').click(function (e) {
                 data.fields.forEach(function (field) {
                     $(`input[name="${field}"]`).addClass('error');
                 });
-                if (data.type === 1) {
-                    $('.log').removeClass('none').text(data.message);
-                }
-                if (data.type === 2) {
-                    $('.pass').removeClass('none').text(data.message);
+                switch (data.type) {
+                    case 1:
+                        $('.log').removeClass('none').text(data.message);
+                        break;
+                    case 2:
+                        $('.pass').removeClass('none').text(data.message);
+                        break;
                 }
             }
         }
@@ -74,20 +76,22 @@ $('.register-btn').click(function (e) {
                 data.fields.forEach(function (field) {
                     $(`input[name="${field}"]`).addClass('error');
                 });
-                if (data.type === 1) {
-                    $('.log').removeClass('none').text(data.message);
-                }
-                if (data.type === 2) {
-                    $('.pass').removeClass('none').text(data.message);
-                }
-                if (data.type === 3) {
-                    $('.em').removeClass('none').text(data.message);
-                }
-                if (data.type === 4) {
-                    $('.nam').removeClass('none').text(data.message);
-                }
-                if (data.type === 5) {
-                    $('.pass-con').removeClass('none').text(data.message);
+                switch (data.type) {
+                    case 1:
+                        $('.log').removeClass('none').text(data.message);
+                        break;
+                    case 2:
+                        $('.pass').removeClass('none').text(data.message);
+                        break;
+                    case 3:
+                        $('.em').removeClass('none').text(data.message);
+                        break;
+                    case 4:
+                        $('.nam').removeClass('none').text(data.message);
+                        break;
+                    case 5:
+                        $('.pass-con').removeClass('none').text(data.message);
+                        break;
                 }
             }
         }
