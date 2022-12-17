@@ -35,6 +35,17 @@ if(strlen($login)<6){
     echo json_encode($response);
     die();
 }
+if(!preg_match("#^[a-zA-Z0-9]+$#", $login)){
+    $error_fields[] = 'login';
+    $response = [
+        "status" => false,
+        "type" => 1,
+        "message" => "Login can contain only letters and numbers",
+        "fields" => $error_fields
+    ];
+    echo json_encode($response);
+    die();
+}
 if ($crud->getUserByLogin($login) !=  null) {
     $response = [
         "status" => false,
@@ -62,6 +73,17 @@ if(strlen($password)<6){
         "status" => false,
         "type" => 2,
         "message" => "Password field min length 6",
+        "fields" => $error_fields
+    ];
+    echo json_encode($response);
+    die();
+}
+if(!preg_match("#^[a-zA-Z0-9£$%&*()}{@?><>,|=_+¬-]+$#", $password)){
+    $error_fields[] = 'password';
+    $response = [
+        "status" => false,
+        "type" => 2,
+        "message" => "Pasword can contain only letters, numbers and £$%&*()}{@?><>,|=_+¬- symbols",
         "fields" => $error_fields
     ];
     echo json_encode($response);

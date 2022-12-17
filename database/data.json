@@ -6,5 +6,13 @@
             "name": "login",
             "login": "Login1"
         }
+    },
+    {
+        "0": {
+            "email": "login1@mail.com",
+            "password": "7d2bdee68e079a78978ad65b6b8fcd4c",
+            "name": "hgfdsdfhhgfdfghjjhgfdfjkjhgfghjkjhgfdfghjkjhgfghjjhgfghjkjhgfghjhgfghjhgfghjhgf",
+            "login": "djhfgyvegjhwjka"
+        }
     }
 ]
