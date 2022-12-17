@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="Style/main.css">
 </head>
 <body>
-    <form>
+    <form action="#">
         <label>Login</label>
         <input type="text" name="login" placeholder="Enter your email" value="<?php if(isset($_COOKIE["login"])) { echo $_COOKIE["login"]; } ?>">
         <p class="log none error-text"></p>

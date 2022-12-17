@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="Style/main.css">
 </head>
 <body>
-    <form id="login-form" class="form" name="login-form" method="post">
+    <form action="#">
         <label>Login</label>
         <input type="text" name="login" placeholder="Enter login">
         <p class="log none error-text"></p>
